@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Cracking Practice</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Styling for the Header */
+        header {
+            text-align: center;
+            background-color: #fff; /* White background */
+            color: #000; /* Black text */
+            padding: 20px 0;
+        }
+
+        /* Apply Black Han Sans font to the header */
+        h1 {
+            font-family: 'Black Han Sans', sans-serif;
+            font-size: 2rem; /* Adjust size as needed */
+            margin: 0;
+            letter-spacing: 2px; /* Add spacing for cosmic effect */
+            text-transform: uppercase; /* Optional: Uppercase text */
+        }
+
+        /* Main Content Styling */
+        main {
+            padding: 20px;
+        }
+
+        /* Table Styling */
+        table {
+            width: auto; /* Automatically adjust width to fit content */
+            border-collapse: collapse; /* Ensures borders are merged */
+            margin: 20px auto; /* Center the table horizontally */
+            font-family: Arial, sans-serif;
+            /*border-right: 2px solid #000; /* Enable right border */
+        }
+
+        /* Table Header Styling */
+        th {
+            background-color: #000; /* Black background */
+            color: #fff; /* White text */
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd; /* Add borders for header cells */
+        }
+
+        /* Table Data Styling */
+        td {
+            border: 1px solid #ddd; /* Add borders for data cells */
+            padding: 10px;
+        }
+
+        /* Alternating Row Colors */
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* Light gray background */
+        }
+
+        tr:hover {
+            background-color: #f1f1f1; /* Highlight on hover */
+        }
+
+        /* Input Box Styling */
+        .crack-input {
+            width: 100%;
+            padding: 5px;
+            box-sizing: border-box;
+        }
+
+        /* Disabled Input Box Styling */
+        .crack-input.disabled {
+            background-color: #f0f0f0;
+            color: green;
+            font-weight: bold;
+            cursor: not-allowed;
+        }
+
+        /* Submit Button Styling */
+        .submit-btn {
+            padding: 5px 10px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .action-btn.hint-btn {
+            padding: 5px 10px;
+            background-color: #2d0909;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            margin-left : 10px
+        }
+        .submit-btn:hover {
+            background-color: #333;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <h1>Password Cracking Practice</h1>
+        <nav>
+            <ul>
+                <a href="https://crackstation.net" target="_blank">Click here to access crackstation.net</a>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Table Structure -->
+    <table>
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Hashed Password</th>
+                <th>Cracked Password</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>5c6ecfa86513efcdde1cc4db2cd0328954142594d8fc9e7a3140e17b8b14ad1c</td>
+                <td><input type="text" class="crack-input" data-hash="$2b$12$EixZaYVK1fsbw1ZfbX3OXePaWxn96p36WQoeG6Lruj3vjPGga31lW"></td>
+                <td><button class="submit-btn" data-row="0">Submit</button><button class="action-btn hint-btn" data-row="0">Hint</button></td>
+            </tr>
+            <tr>
+                <td>Smith</td>
+                <td>7e2b6406d379210644f897a80de06ac1690fb94159ed42c449537245172b271f</td>
+                <td><input type="text" class="crack-input" data-hash="$2b$12$Tn7Jq4KZv8z9Xv5m1c3bOuPwX1a2b3c4d5e6f7g8h9i0j1k2l3m"></td>
+                <td><button class="submit-btn" data-row="1">Submit</button><button class="action-btn hint-btn" data-row="1">Hint</button></td>
+            </tr>
+            <tr>
+                <td>Alice</td>
+                <td>$$$$25baf6ca5845726acbfc07c8d12cf582772f8c25fb27433a78fa2197f08f148f$$$$</td>
+                <td><input type="text" class="crack-input"></td>
+                <td><button class="submit-btn" data-row="2">Submit</button><button class="action-btn hint-btn" data-row="2">Hint</button></td>
+            </tr>
+            <tr>
+                <td>Bob</td>
+                <td>$$$$41d2647859366bbef3adcb99a6dc5a70@@@@@c6257a08fba98ba1e7d9d4339dc1c7ea$$$$</td>
+                <td><input type="text" class="crack-input"></td>
+                <td><button class="submit-btn" data-row="3">Submit</button><button class="action-btn hint-btn" data-row="3">Hint</button></td>
+            </tr>
+            <tr>
+                <td>Kuang</td>
+                <td>8e69e41f4c90aab70f4e532807d639a3283e6f1f341b8c1fac952fa3c0efe1ec</td>
+                <td><input type="text" class="crack-input"></td>
+                <td><button class="submit-btn" data-row="4">Submit</button><button class="action-btn hint-btn" data-row="4">Hint</button></td>
+            </tr>
+            <tr>
+                <td>Donald</td>
+                <td>1bff32c9616811b5ad41057381a7be7dc89d49b44042227c2ba5ffeef24e6450(UNDERSCORE)0e481e2667c3ae2f17a2c8107c67b22b2c296b2c550070c84050dc644a92cae5</td>
+                <td><input type="text" class="crack-input"></td>
+                <td><button class="submit-btn" data-row="5">Submit</button><button class="action-btn hint-btn" data-row="5">Hint</button></td>
+            </tr>
+            <tr>
+                <td>Elon</td>
+                <td>713e5f88bfd245e4c0857f78e216b862232d3e9571a9b647fc9978096cbc77646281013e4e87ab2c808f62bff7cb00a366735ae4dc0255515a0b885ade02e7a3</td>
+                <td><input type="text" class="crack-input"></td>
+                <td><button class="submit-btn" data-row="6">Submit</button><button class="action-btn hint-btn" data-row="6">Hint</button></td>
+            </tr>
+            <tr>
+                <td>Skibidi</td>
+                <td>bfd4c787a612aa4a282b9afea143a4faa5c31007f74a11787c1f3808b3fc2adbc64525521a379c105c405bb1e2b159e9c58b70b9b077c4a74a01597c2a6885f0</td>
+                <td><input type="text" class="crack-input"></td>
+                <td><button class="submit-btn" data-row="7">Submit</button><button class="action-btn hint-btn" data-row="7">Hint</button></td>
+            </tr>
+            <tr>
+                <td>Chimpanzini Bananini</td>
+                <td>b2784zz7bba9z631101c6a0b5263e5286zez2z6b60cz6649a96abed07d93c3584aez32de333d222bdeb445zz4288z4303z39cdbd3a75dcda55c05a156244d1db</td>
+                <td><input type="text" class="crack-input"></td>
+                <td><button class="submit-btn" data-row="8">Submit</button><button class="action-btn hint-btn" data-row="8">Hint</button></td>
+            </tr>
+            <tr>
+                <td>4 dimensional being</td>
+                <td>???????????</td>
+                <td><input type="text" class="crack-input" id="29675cd2572b17b4fbcc88280e9bbc25075751dc92533a955ef1da6d4ee5fc81"></td>
+                <td><button class="submit-btn" data-row="9" id="29675cd2572b17b4fbcc88280e9bbc25075751dc92533a955ef1da6d4ee5fc81">Submit</button><button class="action-btn hint-btn" data-row="9"id="29675cd2572b17b4fbcc88280e9bbc25075751dc92533a955ef1da6d4ee5fc81">Hint</button></td>
+                
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- External JavaScript -->
+    <script src="script.js" defer></script>
+</body>
+</html>
