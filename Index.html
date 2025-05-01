@@ -7,85 +7,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
     <style>
         /* General Reset */
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.4; /* Reduced line height */
+    font-size: 14px; /* Smaller base font size */
+}
 
-        /* Styling for the Header */
-        header {
-            text-align: center;
-            background-color: #fff; /* White background */
-            color: #000; /* Black text */
-            padding: 20px 0;
-        }
+/* Styling for the Header */
+header {
+    text-align: center;
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    padding: 10px 0; /* Reduced padding */
+}
 
-        /* Apply Black Han Sans font to the header */
-        h1 {
-            font-family: 'Black Han Sans', sans-serif;
-            font-size: 2rem; /* Adjust size as needed */
-            margin: 0;
-            letter-spacing: 2px; /* Add spacing for cosmic effect */
-            text-transform: uppercase; /* Optional: Uppercase text */
-        }
+/* Apply Black Han Sans font to the header */
+h1 {
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 1.5rem; /* Reduced font size */
+    margin: 0;
+    letter-spacing: 1px; /* Reduced spacing */
+    text-transform: uppercase;
+}
 
-        /* Main Content Styling */
-        main {
-            padding: 20px;
-        }
+/* Main Content Styling */
+main {
+    padding: 10px; /* Reduced padding */
+}
 
-        /* Table Styling */
-        table {
-            width: auto; /* Automatically adjust width to fit content */
-            border-collapse: collapse; /* Ensures borders are merged */
-            margin: 20px auto; /* Center the table horizontally */
-            font-family: Arial, sans-serif;
-            /*border-right: 2px solid #000; /* Enable right border */
-        }
+/* Table Styling */
+table {
+    width: auto; /* Automatically adjust width to fit content */
+    border-collapse: collapse; /* Ensures borders are merged */
+    margin: 10px auto; /* Reduced margin */
+    font-family: Arial, sans-serif;
+    font-size: 12px; /* Smaller font size for table */
+    border-right: 1px solid #000; /* Thinner right border */
+}
 
-        /* Table Header Styling */
-        th {
-            background-color: #000; /* Black background */
-            color: #fff; /* White text */
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ddd; /* Add borders for header cells */
-        }
+/* Table Header Styling */
+th {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    padding: 5px; /* Reduced padding */
+    text-align: left;
+    border: 1px solid #ddd; /* Add borders for header cells */
+    font-size: 12px; /* Smaller font size */
+}
 
-        /* Table Data Styling */
-        td {
-            border: 1px solid #ddd; /* Add borders for data cells */
-            padding: 10px;
-        }
+/* Table Data Styling */
+td {
+    border: 1px solid #ddd; /* Add borders for data cells */
+    padding: 5px; /* Reduced padding */
+    font-size: 12px; /* Smaller font size */
+}
 
-        /* Alternating Row Colors */
-        tr:nth-child(even) {
-            background-color: #f9f9f9; /* Light gray background */
-        }
+/* Alternating Row Colors */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Light gray background */
+}
 
-        tr:hover {
-            background-color: #f1f1f1; /* Highlight on hover */
-        }
+tr:hover {
+    background-color: #f1f1f1; /* Highlight on hover */
+}
 
-        /* Input Box Styling */
-        .crack-input {
-            width: 100%;
-            padding: 5px;
-            box-sizing: border-box;
-        }
+/* Input Box Styling */
+.crack-input {
+    width: 100%;
+    padding: 3px; /* Reduced padding */
+    box-sizing: border-box;
+    font-size: 12px; /* Smaller font size */
+}
 
-        /* Disabled Input Box Styling */
-        .crack-input.disabled {
-            background-color: #f0f0f0;
-            color: green;
-            font-weight: bold;
-            cursor: not-allowed;
-        }
+/* Disabled Input Box Styling */
+.crack-input.disabled {
+    background-color: #f0f0f0;
+    color: green;
+    font-weight: bold;
+    cursor: not-allowed;
+}
 
-        /* Submit Button Styling */
-        .submit-btn {
+.submit-btn {
             padding: 5px 10px;
             background-color: #000;
             color: #fff;
